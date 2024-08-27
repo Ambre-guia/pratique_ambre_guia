@@ -6,15 +6,19 @@ services:
       - "27017:27017"
 
   app:
-    build: .
+    image: "node:lts-slim"
+    env_file:
+      - .env
+    command:
+      - /bin/sh
+      - "-c"
+      - "npm install && npm start"
     ports:
       - "3000:3000"
-    env_file: .env
     depends_on:
       - mongo
     volumes:
-      - ./back:/app
-      - /app/node_modules
+      - ./mini-crm-back:/app
 
 volumes:
   mongo-data:

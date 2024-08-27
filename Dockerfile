@@ -5,10 +5,10 @@ FROM node:16
 RUN npm install -g nodemon
 
 # Set the working directory inside the container
-WORKDIR ./
+WORKDIR /app
 
 # Copy the package.json and package-lock.json files
-COPY package*.json ./mini-crm-back/
+COPY ./mini-crm-back/package*.json .
 
 # Install the Node.js dependencies
 RUN npm install
