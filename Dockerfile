@@ -8,7 +8,7 @@ RUN npm install -g nodemon
 WORKDIR ./
 
 # Copy the package.json and package-lock.json files
-COPY package*.json ./mini-crm-back/
+COPY package*.json ./
 
 # Install the Node.js dependencies
 RUN npm install
